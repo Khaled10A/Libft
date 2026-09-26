@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 11:20:40 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/25 15:50:10 by kalnajja         ###   ########.fr       */
+/*   Created: 2026/09/25 19:00:40 by kalnajja          #+#    #+#             */
+/*   Updated: 2026/09/25 23:45:47 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	void	*ptr;
 
-	d = (unsigned char *) dst;
-	s = (const unsigned char *) src;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dst);
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+		return (NULL);
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+printf("size_t: %zu bytes\n", sizeof(size_t));
+printf("SIZE_MAX: %zu\n", SIZE_MAX);
+return (0);
+}
+*/

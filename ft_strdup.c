@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 11:20:40 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/25 15:50:10 by kalnajja         ###   ########.fr       */
+/*   Created: 2026/09/25 23:47:55 by kalnajja          #+#    #+#             */
+/*   Updated: 2026/09/26 01:47:17 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	char	*copy;
+	size_t	i;
 
-	d = (unsigned char *) dst;
-	s = (const unsigned char *) src;
+	copy = malloc(ft_strlen(s) + 1);
+	if (copy == NULL)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		d[i] = s[i];
+		copy[i] = s[i];
 		i++;
 	}
-	return (dst);
+	copy[i] = '\0';
+	return (copy);
 }
+
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+char	*copy;
+
+copy = ft_strdup("Hello World");
+printf("%s\n", copy);
+free(copy);
+return (0);
+}
+*/

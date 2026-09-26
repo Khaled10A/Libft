@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   ft_isdigit.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*   By: kalnajja <kalnajja@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/21 15:10:34 by username         #+#    #+#              */
-/*   Updated: 2026/09/21 16:23:21 by username        ###   ########.fr        */
+/*   Created: 2026/09/22 12:17:18 by kalnajja         #+#    #+#              */
+/*   Updated: 2026/09/23 11:10:05 by kalnajja        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 

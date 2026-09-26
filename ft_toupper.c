@@ -3,10 +3,10 @@
 /*                                                       :::      ::::::::    */
 /*   ft_toupper.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
+/*   By: kalnajja <kalnajja@student.42amman.com>   #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/21 15:30:31 by username         #+#    #+#              */
-/*   Updated: 2026/09/21 16:23:01 by username        ###   ########.fr        */
+/*   Created: 2026/09/22 12:18:04 by kalnajja         #+#    #+#              */
+/*   Updated: 2026/09/23 11:10:22 by kalnajja        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
