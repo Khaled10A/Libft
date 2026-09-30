@@ -6,11 +6,12 @@
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 16:23:25 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/30 11:29:59 by kalnajja         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:25:18 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -31,10 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
-
 /*
-#include <stdio.h>
-
 void	*to_upper(void *content)
 {
 char	*str;
@@ -65,9 +63,9 @@ int	main(void)
 {
 t_list	*list;
 t_list	*new_list;
-char	str1[] = "hello";
-char	str2[] = "world";
-char	str3[] = "khaled";
+char	*str1 = "hello";
+char	*str2 = "world";
+char	*str3 = "khaled";
 
 list = ft_lstnew(str1);
 list->next = ft_lstnew(str2);
