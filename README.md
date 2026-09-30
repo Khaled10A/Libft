@@ -64,14 +64,16 @@ build it before compiling the rest of your sources.
 
 ### AI usage disclosure
 
+AI was used as a learning and debugging assistant during the project.
+
 | Task | How AI was used |
 |---|---|
-| Understanding function logic | Step-by-step explanations + flowcharts for *why* each check exists (e.g. why `memmove` handles overlap differently from `memcpy`, why `ft_itoa`/`ft_putnbr_fd` widen to `long` for `INT_MIN`) — no ready-made code was requested or copied. |
-| Code review | Reviewing already hand-written code, flagging missed edge cases (e.g. the `n == 0` gap in an early `ft_itoa` draft) and explaining *why* they mattered, without supplying the fix directly. |
-| Planning | General time-estimation help for organizing work across the three parts. |
+| Debugging & memory analysis | Learning and understanding tools such as **Valgrind** to detect memory leaks, invalid reads/writes, and memory-related errors. |
+| Memory visualization | Using **flowcharts and memory diagrams** to visualize pointers, heap allocations, linked lists, and how memory is connected. |
+| C concepts | Explaining concepts such as pointers, dynamic memory allocation, and memory overlap in functions like `memcpy` and `memmove`. |
+| Code understanding | Reviewing already-written code and explaining its behavior, edge cases, and possible memory issues. |
 
-All function implementations in this repository were written by hand by
-the student; AI was not used to generate the submitted source code.
+AI was used for explanation, visualization, debugging guidance, and learning support. The submitted implementations were written and tested by the student.
 
 ## Implementation notes
 
