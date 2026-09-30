@@ -4,45 +4,21 @@
 
 ## Description
 
-Libft is a personal library that reimplements a set of standard C library
-functions (`libc`) — such as `strlen`, `memcpy`, `strdup` — from scratch,
-prefixed with `ft_`, along with a set of additional utility functions
-(string manipulation, integer conversion, higher-order function helpers)
-and a small linked-list toolkit built around a custom `t_list` structure.
-
-The goal of this project is not just to produce a working library, but to
-truly understand how these fundamental functions behave internally
-(pointer arithmetic, memory allocation, edge cases such as `NULL`,
-`INT_MIN`, overlapping memory regions, etc.) by writing every function
-manually, without relying on the original `libc` implementations.
-
-This library is meant to be reused as a foundation for every future C
-project in the 42 curriculum.
+| | |
+|---|---|
+| **What** | A personal C library reimplementing standard `libc` functions (prefixed `ft_`), plus extra utility and linked-list helpers. |
+| **Why** | To understand how these functions work internally (pointers, memory, edge cases) by writing them from scratch — no reliance on the original `libc`. |
+| **Used for** | Foundation library reused across future 42 projects. |
 
 ## Library Overview
 
-The library is organized into three parts:
+| Part | Theme | Count | Functions |
+|---|---|---|---|
+| **Part 1** | Libc functions | 23 | `ft_isalpha` `ft_isdigit` `ft_isalnum` `ft_isascii` `ft_isprint` `ft_strlen` `ft_memset` `ft_bzero` `ft_memcpy` `ft_memmove` `ft_strlcpy` `ft_strlcat` `ft_toupper` `ft_tolower` `ft_strchr` `ft_strrchr` `ft_strncmp` `ft_memchr` `ft_memcmp` `ft_strnstr` `ft_atoi` `ft_calloc` `ft_strdup` |
+| **Part 2** | Additional functions | 11 | `ft_substr` `ft_strjoin` `ft_strtrim` `ft_split` `ft_itoa` `ft_strmapi` `ft_striteri` `ft_putchar_fd` `ft_putstr_fd` `ft_putendl_fd` `ft_putnbr_fd` |
+| **Part 3** | Linked list | 9 | `ft_lstnew` `ft_lstadd_front` `ft_lstsize` `ft_lstlast` `ft_lstadd_back` `ft_lstdelone` `ft_lstclear` `ft_lstiter` `ft_lstmap` |
 
-### Part 1 — Libc functions
-Reimplementations of standard `libc` functions, keeping the exact same
-prototype and behavior as documented in the man pages:
-
-`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`,
-`ft_strlen`, `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`,
-`ft_strlcpy`, `ft_strlcat`, `ft_toupper`, `ft_tolower`, `ft_strchr`,
-`ft_strrchr`, `ft_strncmp`, `ft_memchr`, `ft_memcmp`, `ft_strnstr`,
-`ft_atoi`, `ft_calloc`, `ft_strdup`.
-
-### Part 2 — Additional functions
-Utility functions that either don't exist in the `libc` or exist in a
-different form:
-
-`ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split`, `ft_itoa`,
-`ft_strmapi`, `ft_striteri`, `ft_putchar_fd`, `ft_putstr_fd`,
-`ft_putendl_fd`, `ft_putnbr_fd`.
-
-### Part 3 — Linked list
-A minimal singly-linked list toolkit built on:
+**Linked list structure:**
 
 ```c
 typedef struct s_list
@@ -52,79 +28,53 @@ typedef struct s_list
 }	t_list;
 ```
 
-Functions: `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`,
-`ft_lstadd_back`, `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`,
-`ft_lstmap`.
-
 ## Instructions
 
-### Compilation
+| Command | Effect |
+|---|---|
+| `make` | Builds `libft.a` |
+| `make bonus` | Builds bonus files, if any |
+| `make clean` | Removes object files |
+| `make fclean` | Removes object files + `libft.a` |
+| `make re` | `fclean` + full rebuild |
 
-```bash
-make            # builds libft.a
-make bonus      # builds bonus files, if any
-make clean      # removes object files
-make fclean     # removes object files and libft.a
-make re         # fclean + full rebuild
-```
-
-The library is compiled with `-Wall -Wextra -Werror`, and archived into
-`libft.a` at the root of the repository using `ar`.
-
-### Usage in another project
+**Usage in another project:**
 
 ```c
 #include "libft.h"
 ```
 
-Compile and link against the archive:
-
 ```bash
 cc -Wall -Wextra -Werror your_files.c -L. -lft -o your_program
 ```
 
-Or copy the `libft` folder into your project and build it via its own
-`Makefile` before compiling the rest of your sources, as required by
-the 42 common instructions.
+Or copy the `libft` folder into your project and let its own `Makefile`
+build it before compiling the rest of your sources.
 
 ## Resources
 
-- `man 3 <function>` — the primary reference used to match the exact
-  behavior/signature of every reimplemented `libc` function
-  (e.g. `man 3 strlcpy`, `man 3 memmove`).
-- The Libft subject PDF (v19.3) — for exact prototypes, return values,
-  and edge-case requirements (e.g. `calloc` behavior when `nmemb` or
-  `size` is `0`).
-- 42 Norm documentation — for code style constraints (no `for` loops,
-  static helper functions, file/function line limits, etc.).
+| Resource | Used for |
+|---|---|
+| `man 3 <function>` | Matching exact behavior/signature of every reimplemented function |
+| Libft subject PDF (v19.3) | Exact prototypes, return values, edge cases (e.g. `calloc(0,0)`) |
+| 42 Norm documentation | Style constraints — no `for`, static helpers, line limits |
 
 ### AI usage disclosure
 
-An AI assistant (Claude, Anthropic) was used strictly as a **learning
-and review aid**, in the following ways:
-
-- Explaining the *logic* behind each function (why a check is needed,
-  why `memmove` must handle overlapping memory differently from
-  `memcpy`, why `ft_itoa`/`ft_putnbr_fd` need to widen to `long` to
-  safely handle `INT_MIN`, etc.) through step-by-step breakdowns and
-  flowcharts, without providing ready-made code to copy.
-- **Reviewing code that was already written** by the student, pointing
-  out edge cases that were missed (e.g. the `n == 0` case initially
-  missing in a draft of `ft_itoa`) and explaining *why* they mattered,
-  rather than supplying the fix directly.
-- General planning/time-estimation help for organizing the work across
-  the three parts of the project.
+| Task | How AI was used |
+|---|---|
+| Understanding function logic | Step-by-step explanations + flowcharts for *why* each check exists (e.g. why `memmove` handles overlap differently from `memcpy`, why `ft_itoa`/`ft_putnbr_fd` widen to `long` for `INT_MIN`) — no ready-made code was requested or copied. |
+| Code review | Reviewing already hand-written code, flagging missed edge cases (e.g. the `n == 0` gap in an early `ft_itoa` draft) and explaining *why* they mattered, without supplying the fix directly. |
+| Planning | General time-estimation help for organizing work across the three parts. |
 
 All function implementations in this repository were written by hand by
-the student; the AI was not used to generate the submitted source code.
+the student; AI was not used to generate the submitted source code.
 
-## Additional notes
+## Implementation notes
 
-- Global variables are not used anywhere in this library.
-- Helper functions used to break down more complex logic (e.g. in
-  `ft_split`, `ft_itoa`) are declared `static` to restrict their scope
-  to their own file.
-- `ft_calloc` guards against integer overflow before multiplying
-  `nmemb * size`.
-- `ft_itoa` and `ft_putnbr_fd` convert to `long` internally to safely
-  handle `INT_MIN` without signed integer overflow.
+| Point | Detail |
+|---|---|
+| Global variables | Not used anywhere in this library |
+| Helper functions | Declared `static` to restrict scope (e.g. in `ft_split`, `ft_itoa`) |
+| `ft_calloc` | Guards against integer overflow before `nmemb * size` |
+| `ft_itoa` / `ft_putnbr_fd` | Convert to `long` internally to safely handle `INT_MIN` |
