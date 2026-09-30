@@ -6,12 +6,11 @@
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 12:39:43 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/29 12:52:26 by kalnajja         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:28:40 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
@@ -22,6 +21,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 /*
+#include <stdio.h>
+
 void	to_upper(void *content)
 {
 char	*str;

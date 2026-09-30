@@ -6,12 +6,11 @@
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 13:42:50 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/29 12:17:37 by kalnajja         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:30:13 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -25,6 +24,8 @@ t_list	*ft_lstnew(void *content)
 	return (node);
 }
 /*
+#include <stdio.h>
+
 int	main(void)
 {
 char	*x;
