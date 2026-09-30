@@ -33,7 +33,6 @@ typedef struct s_list
 | Command | Effect |
 |---|---|
 | `make` | Builds `libft.a` |
-| `make bonus` | Builds bonus files, if any |
 | `make clean` | Removes object files |
 | `make fclean` | Removes object files + `libft.a` |
 | `make re` | `fclean` + full rebuild |
