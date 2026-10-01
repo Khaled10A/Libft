@@ -72,7 +72,6 @@ AI was used as a learning and debugging assistant during the project.
 | C concepts | Explaining concepts such as pointers, dynamic memory allocation, and memory overlap in functions like `memcpy` and `memmove`. |
 | Code understanding | Reviewing already-written code and explaining its behavior, edge cases, and possible memory issues. |
 
-AI was used for explanation, visualization, debugging guidance, and learning support. The submitted implementations were written and tested by the student.
 
 ## Implementation notes
 
