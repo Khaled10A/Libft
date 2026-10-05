@@ -81,3 +81,43 @@ AI was used as a learning and debugging assistant during the project.
 | Helper functions | Declared `static` to restrict scope (e.g. in `ft_split`, `ft_itoa`) |
 | `ft_calloc` | Guards against integer overflow before `nmemb * size` |
 | `ft_itoa` / `ft_putnbr_fd` | Convert to `long` internally to safely handle `INT_MIN` |
+
+## Function Categories
+
+### Part 1 — Libc Functions
+
+Reimplementations of commonly used C standard library functions. This part focuses on character validation, string manipulation, memory operations, and dynamic memory allocation.
+
+| Category | Functions | Description |
+|---|---|---|
+| **Character Checks** | `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint` | Check whether a character belongs to a specific character set or range. |
+| **String Length & Case** | `ft_strlen`, `ft_toupper`, `ft_tolower` | Measure string length and convert characters between uppercase and lowercase. |
+| **Memory Operations** | `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp` | Work directly with raw memory, including initialization, copying, searching, and comparison. |
+| **String Operations** | `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr` | Copy, concatenate, search, and compare null-terminated strings with length limits. |
+| **Number Conversion** | `ft_atoi` | Convert a numeric string into an integer while handling whitespace and signs. |
+| **Dynamic Memory** | `ft_calloc`, `ft_strdup` | Allocate memory dynamically and create duplicated strings. |
+
+### Part 2 — Additional Functions
+
+Utility functions built on top of the concepts learned in Part 1. This part focuses on dynamic string construction, string transformation, callbacks, and file-descriptor output.
+
+| Category | Functions | Description |
+|---|---|---|
+| **String Construction** | `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_split` | Create, combine, clean, and divide strings while managing dynamically allocated memory. |
+| **Number to String** | `ft_itoa` | Convert an integer into a dynamically allocated string representation. |
+| **String Iteration & Mapping** | `ft_strmapi`, `ft_striteri` | Apply a custom function to each character of a string using callbacks. |
+| **File Descriptor Output** | `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd` | Write characters, strings, and numbers directly to a specified file descriptor. |
+
+### Part 3 — Linked Lists
+
+Implementation of a singly linked-list data structure using dynamically allocated nodes. This part introduces structures, pointers, function pointers, and memory ownership.
+
+| Category | Functions | Description |
+|---|---|---|
+| **Node Creation** | `ft_lstnew` | Create and initialize a new linked-list node. |
+| **List Insertion** | `ft_lstadd_front`, `ft_lstadd_back` | Add nodes to the beginning or end of a list. |
+| **List Traversal & Size** | `ft_lstsize`, `ft_lstlast` | Count nodes and retrieve the last node in a list. |
+| **Memory Management** | `ft_lstdelone`, `ft_lstclear` | Delete individual nodes or clear an entire list while freeing allocated memory. |
+| **List Iteration** | `ft_lstiter` | Apply a function to the content of every node. |
+| **List Mapping** | `ft_lstmap` | Create a new list by applying a function to every node's content, while handling allocation failures and cleanup. |
+
