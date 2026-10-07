@@ -6,7 +6,7 @@
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 11:17:29 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/29 12:51:16 by kalnajja         ###   ########.fr       */
+/*   Updated: 2026/10/07 19:48:36 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst == NULL || del == NULL)
+	if (lst == NULL)
 		return ;
-	del(lst->content);
+	if (del != NULL)
+		del(lst->content);
 	free(lst);
 }
 /*
