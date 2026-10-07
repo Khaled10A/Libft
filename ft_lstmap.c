@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   ft_lstmap.c                                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: kalnajja <kalnajja@student.42amman.com>   #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/29 16:23:25 by kalnajja         #+#    #+#              */
-/*   Updated: 2026/10/05 11:12:07 by kalnajja        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/29 16:23:25 by kalnajja          #+#    #+#             */
+/*   Updated: 2026/10/07 20:02:16 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		new_node = ft_lstnew(content);
 		if (new_node == NULL)
 		{
-			del(content);
+			if (del != NULL)
+				del(content);
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}

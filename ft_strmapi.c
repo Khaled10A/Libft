@@ -6,7 +6,7 @@
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 10:57:21 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/27 14:59:24 by kalnajja         ###   ########.fr       */
+/*   Updated: 2026/10/07 20:06:53 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,23 +30,39 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 /*
+#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-static char	to_upper(unsigned int i, char c)
+char	to_upper(unsigned int i, char c)
 {
-(void) i;
+(void)i;
 if (c >= 'a' && c <= 'z')
 return (c - 32);
 return (c);
+}
+
+char	add_index(unsigned int i, char c)
+{
+return (c + i);
 }
 
 int	main(void)
 {
 char	*result;
 
-result = ft_strmapi("hello world", to_upper);
+result = ft_strmapi("hello", to_upper);
 printf("%s\n", result);
 free(result);
+
+result = ft_strmapi("abcde", add_index);
+printf("%s\n", result);
+free(result);
+
+result = ft_strmapi("", to_upper);
+printf("\"%s\"\n", result);
+free(result);
+
 return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 13:44:00 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/30 11:29:08 by kalnajja         ###   ########.fr       */
+/*   Updated: 2026/10/07 20:10:34 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;
 
+	if (lst == NULL)
+		return ;
 	while (*lst != NULL)
 	{
 		next = (*lst)->next;
