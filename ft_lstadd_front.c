@@ -6,7 +6,7 @@
 /*   By: kalnajja <kalnajja@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 16:34:34 by kalnajja          #+#    #+#             */
-/*   Updated: 2026/09/28 16:40:49 by kalnajja         ###   ########.fr       */
+/*   Updated: 2026/10/09 11:41:22 by kalnajja         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	if (lst == NULL || new == NULL)
+		return ;
 	new->next = *lst;
 	*lst = new;
 }
